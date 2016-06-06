@@ -25,7 +25,7 @@ int main()
 	obj_lr.initLogisticRegression();
     obj_lr.train();
 	obj_lr.end();
-		
+
 		
 		
 		
