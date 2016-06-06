@@ -15,17 +15,29 @@ int main()
     const int DIMENTION = 100+1;
     double begin_time=0;
 	double end_time=0;
+    const bool SPARSE = true;
+    const bool DENSE = false;
 
 	logistic_regression obj_lr;
-
-	mat training_x = ones(DIMENTION,DATA_SIZE);
-    mat training_y, parameters_w;
-	training_x.load("training_x");	
+    mat training_x, training_y, parameters_w;
+    if(SPARSE)//sparse dataset
+    {
+        training_x = zeros(DIMENTION,DATA_SIZE);
+        training_x.row(0).fill(1);
+    }
+    else//dense dataset 
+        training_x = ones(DIMENTION,DATA_SIZE);
+    	training_x.load("training_x");	
     //add the constant;
 
 	training_y.load("training_y");
 	
-	obj_lr.initLogisticRegression();
+	obj_lr.initLogisticRegression(DATA_SZIE,
+                                  LEARNING_RATE,
+                                  REGULARIZED,
+                                  MAX_NUM_ITERATION,
+                                  EPOCH_SIZE,
+                                  DIMENTION);
     obj_lr.begin(&begin_time);
     obj_lr.train();
 	obj_lr.end(&end_time);
