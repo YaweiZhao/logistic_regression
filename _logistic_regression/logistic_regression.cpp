@@ -56,6 +56,12 @@ void train();
         }
         //Identify the parameters for the next iteration
         identifyParameters(local_parameter, parameter);
+
+        //evaluate the loss
+        if(i%5==0)
+        {
+            computeLoss(parameter, training_x, training_y);
+        }
     }
 
     
