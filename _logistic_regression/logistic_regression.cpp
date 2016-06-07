@@ -13,7 +13,7 @@ void initLogisticRegression(int data_size,
                             double regularized,
                             int max_num_iteration,
                             int epoch_size,
-                            int dimention);
+                            int dimention)
 {
     DATA_SIZE = data_size;
 	LEARNING_RATE = learning_rate;
@@ -25,17 +25,17 @@ void initLogisticRegression(int data_size,
 }
 
 //record the begin time of the training process
-void begin(time_t begin);
+void begin(time_t begin)
 {
     time(&begin);
 }
 //record the end time of the training process
-void end(time_t end);
+void end(time_t end)
 {
     time(&end);
 }
 //training the parameters. The fl2-regularization is added
-void train();
+void train()
 {
     for(int i=0;i<MAX_NUM_ITERATION;i++)
     {

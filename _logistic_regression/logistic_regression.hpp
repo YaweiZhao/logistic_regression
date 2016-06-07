@@ -56,8 +56,5 @@ class logistic_regression
 
     //compute the loss function
     double computeLoss(vec parameter, mat x, vec y);
-
-
-
     
-}
+};
