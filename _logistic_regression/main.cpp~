@@ -23,6 +23,10 @@ int main()
     char* fn_x = "data.txt";
     char* fn_y = "label.txt";
     
+<<<<<<< Updated upstream
+	logistic_regression obj_lr;
+    mat training_x, training_y, parameters_w;
+=======
 	logistic_regression obj_lr(DATA_SIZE,
                                   LEARNING_RATE,
                                   REGULARIZED,
@@ -30,6 +34,7 @@ int main()
                                   EPOCH_SIZE,
                                   DIMENTION,
                                   GAMMA);
+>>>>>>> Stashed changes
     if(SPARSE)//sparse dataset
     {
 	sp_mat x_mat;
@@ -44,8 +49,18 @@ int main()
     //add the constant;
 	obj_lr.training_y.load(fn_y);
 	
+<<<<<<< Updated upstream
+	obj_lr.initLogisticRegression(DATA_SZIE,
+                                  LEARNING_RATE,
+                                  REGULARIZED,
+                                  MAX_NUM_ITERATION,
+                                  EPOCH_SIZE,
+                                  DIMENTION);
+    obj_lr.begin(&begin_time);
+=======
 	obj_lr.begin(begin_time);
 
+>>>>>>> Stashed changes
     obj_lr.train();
 	obj_lr.end(end_time);
 	return 0;

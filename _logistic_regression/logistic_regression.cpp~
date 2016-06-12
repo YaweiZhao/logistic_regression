@@ -9,8 +9,12 @@ using namespace std;
 using namespace arma;
 
 //initialize the logistic regression parameter settings
+<<<<<<< Updated upstream
+void initLogisticRegression(int data_size,
+=======
 logistic_regression::logistic_regression(){}
 logistic_regression::logistic_regression(int data_size,
+>>>>>>> Stashed changes
                             double learning_rate,
                             double regularized,
                             int max_num_iteration,
