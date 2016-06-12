@@ -8,7 +8,6 @@ using namespace std;
 using namespace arma;
 
 //initialize the logistic regression parameter settings
-logistic_regression(){}
 logistic_regression(int data_size,
                             double learning_rate,
                             double regularized,
