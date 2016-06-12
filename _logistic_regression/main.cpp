@@ -21,12 +21,7 @@ int main()
     char* training_x = "data.txt";
     char* training_y = "label.txt";
     
-	logistic_regression obj_lr(DATA_SZIE,
-                                  LEARNING_RATE,
-                                  REGULARIZED,
-                                  MAX_NUM_ITERATION,
-                                  EPOCH_SIZE,
-                                  DIMENTION);
+	logistic_regression obj_lr;
     mat training_x, training_y, parameters_w;
     if(SPARSE)//sparse dataset
     {
@@ -40,7 +35,13 @@ int main()
 
 	training_y.load(training_y);
 	
-	obj_lr.begin(&begin_time);
+	obj_lr.initLogisticRegression(DATA_SZIE,
+                                  LEARNING_RATE,
+                                  REGULARIZED,
+                                  MAX_NUM_ITERATION,
+                                  EPOCH_SIZE,
+                                  DIMENTION);
+    obj_lr.begin(&begin_time);
     obj_lr.train();
 	obj_lr.end(&end_time);
 	return 0;

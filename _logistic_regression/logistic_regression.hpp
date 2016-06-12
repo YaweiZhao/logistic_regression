@@ -19,7 +19,7 @@ class logistic_regression
 
     public:
     //initialize the logistic regression parameter settings
-    logistic_regression(int data_size,
+    void initLogisticRegression(int data_size,
                             double learning_rate,
                             double regularized,
                             int max_num_iteration,
